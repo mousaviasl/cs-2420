@@ -1,15 +1,15 @@
 /*
-    Author: [Your Name]
-    Assignment: Dynamic Memory and Arrays in C++
-    Description: Implements dynamic array creation, expansion, deletion, error handling, and sorting.
+    Name: [Esmaeil Mousavi]
+    Dynamic Memory and Arrays in C++ Assignment
+    Implementing dynamic array creation, expansion, deletion, error handling, and sorting.
 */
 
 #include <iostream>
-#include <limits>   // For input validation
-#include <algorithm> // For std::sort
+#include <limits>   // input validation
+#include <algorithm> // For sorting
 using namespace std;
 
-// Function to deallocate dynamic array
+// Using this function, I deallocate the dynamic array
 void deleteArray(int* &arr) {
     delete[] arr;
     arr = nullptr;
@@ -25,7 +25,7 @@ void sortArray(int* arr, int size) {
     cout << endl;
 }
 
-// Function to validate integer input
+// This function validate integer input
 bool getValidInteger(int &value) {
     cin >> value;
     if (cin.fail()) {
@@ -39,11 +39,11 @@ bool getValidInteger(int &value) {
 int main() {
     int size;
 
-    // 1. Introduction to Dynamic Arrays
+    // 1. Dynamic Arrays
     cout << "--- Introduction to Dynamic Arrays ---\n";
-    cout << "Dynamic arrays are arrays whose size is determined at runtime.\n";
-    cout << "They are useful when the amount of data is unknown or changes during program execution.\n";
-    cout << "For example, collecting user input until a stop condition is met requires dynamic memory.\n\n";
+    cout << "Dynamic arrays are arrays that their size is is dynamic and will be determind at runtime.\n";
+    cout << "It is useful when the amount of data is unknown or changes.\n";
+    cout << "For example, taking the user input until a stop condition needs dynamic memory.\n\n";
 
     // Task 1: Creating a Dynamic Array
     cout << "Enter the size of the array: ";
@@ -81,7 +81,7 @@ int main() {
         int newSize = size + additional;
         int* newArray = new int[newSize];
 
-        // Copy old elements to new array
+        // Copy the old element
         for (int i = 0; i < size; ++i) {
             newArray[i] = array[i];
         }
@@ -93,7 +93,7 @@ int main() {
             }
         }
 
-        // Delete old array and update pointer
+        // Delete old array, update pointer
         deleteArray(array);
         array = newArray;
         size = newSize;
